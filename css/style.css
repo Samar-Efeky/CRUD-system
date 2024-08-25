@@ -1,0 +1,43 @@
+body{
+    background: linear-gradient(to right,#0C1844,black);
+}
+#formProduct{
+    box-shadow: 4px 4px 50px 10px rgb(1, 1, 115);
+    width: 50%;
+}
+button{
+    background-color: rgb(0, 0, 164);
+    box-shadow: 1px 1px 2px 1px black;
+    transition: all 0.8s;
+}
+#update{
+    background-color:rgb(0, 0, 227) ;
+}
+button:hover,
+#update:hover{
+    background-color: #00145d;
+}
+#search{
+    width: 30%;
+}
+li{
+    cursor: pointer;
+    transition: all 0.5s;
+}
+li:hover{
+    background-color:rgba(0, 0, 0, 0.2);
+}
+#searchList{
+    display: none;
+}
+@media screen and (max-width:992px){
+    h1{
+        font-size: 1.6rem;
+    }
+    #formProduct{
+        width: 94%;
+    }
+    #search{
+        width: 70%;
+    }
+}

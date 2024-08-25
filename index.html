@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="w-100">
+        <h1 class="text-center text-white my-5 fw-bolder">CRUD System</h1>
+    <div id="formProduct" class="container bg-white p-5 rounded-4">
+        <form>
+            <label for="productName" class="fw-bold">productName :</label>
+            <input onkeyup="validateProductName()" type="text" id="productName" class="form-control my-3" placeholder="product name ...">
+            <div class="alert alert-danger d-none" id="nameAlert">
+                <p>UserName must be start with uppercase and then from 4 to 10 letters.</p>
+            </div>
+            <label for="productPrice" class="fw-bold">productPrice :</label>
+            <input onkeyup="validateProductPrice()" type="text" id="productPrice" class="form-control my-3" placeholder="product price ...">
+            <div class="alert alert-danger d-none" id="priceAlert">
+                <p>product price must be from 4 to 10 numbers.</p>
+            </div>
+            <label for="productCategory" class="fw-bold">productCategory :</label>
+            <input onkeyup="validateProductCategory()" type="text" id="productCategory" class="form-control my-3" placeholder="product category ...">
+            <div class="alert alert-danger d-none" id="categoryAlert">
+                <p>product category must be at least 5 letters.</p>
+            </div>
+            <label for="productDesc" class="fw-bold">productDesc :</label>
+            <textarea onkeyup="validateProductDesc()" id="productDesc" class="form-control my-3" placeholder="product description ..."></textarea>
+            <div class="alert alert-danger d-none" id="descAlert">
+                <p>product description must be at least 5 letters.</p>
+            </div>
+        </form>
+        <button onclick="addProduct();" class="p-2 border-0 text-white rounded-3 mt-3" id="btnAddProduct">addProduct</button>
+        <button onclick="clearForm();" class="p-2 px-3 border-0 text-white rounded-3 mt-3 mx-4" id="btnClearForm">Clear</button>
+    </div> <!-- formProduct -->
+    <div class="m-auto my-5 fw-medium" id="search">
+        <input onkeyup="searchProduct(this.value)" type="search" class="w-100 border-1 p-2" id="searchProduct" placeholder="search....">
+        <ul class="list-unstyled rounded-1 bg-white">
+            <li id="searchList" class="p-1 w-100"></li>
+        </ul>
+    </div> <!-- search -->
+    </div>
+    <table class="table table-bordered border-primary table-striped text-center container py-3 my-4">
+        <thead>
+            <th>index</th>
+            <th>Name </th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Desc</th>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td rowspan="2" class="py-5">0</td>
+                <td>iphone</td>
+                <td>10000</td>
+                <td>mobile</td>
+                <td>good</td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="p-2 border-0 text-white rounded-3" id="update">update</button></td>
+                <td colspan="3"><button class="p-2 border-0 text-white rounded-3" id="btnDelete">delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="js/script.js"></script>
+</body>
+</html>
